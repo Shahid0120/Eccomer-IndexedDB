@@ -38,7 +38,7 @@ this is a eccomerce website created using React.js library and Redux as a state 
 [Axios]
 [Offline-is-Online]
 [Material-IO]
-[React-Router]
+[React router]
 
 ### Prerequisites
 

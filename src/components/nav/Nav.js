@@ -3,6 +3,9 @@ import "./Nav.css";
 import { useHistory } from "react-router-dom";
 import searchImage from "./ImagesNav/searchbar.png";
 import Menu from "./ImagesNav/menuhamburg.png";
+import Cart from "./ImagesNav/Cart.png";
+import LogoImage from "./ImagesNav/LogoPlaceholder.svg";
+
 function Nav() {
   // logo is click
   let history = useHistory();
@@ -32,19 +35,10 @@ function Nav() {
     // menuitem
     <div id="nav">
       <div id="logo">
-        <img
-          src="/Users/shahidhussain/Documents/Eccomerce-IndexedDB/public/assest/images/logo/uniqlo-logo-vector.svg"
-          alt="logo"
-          onClick={logoClick}
-        />
+        <img id="logo--image" src={LogoImage} alt="logo" onClick={logoClick} />
       </div>
       <div id="nav-items">
-        <img
-          id="cart"
-          src="/Users/shahidhussain/Documents/Eccomerce-IndexedDB/public/assest/images/nav-utils/basket.png"
-          alt="kart"
-          onClick={cartClick}
-        />
+        <img id="cart" src={Cart} alt="kart" onClick={cartClick} />
         <img
           id="search--bar"
           src={searchImage}

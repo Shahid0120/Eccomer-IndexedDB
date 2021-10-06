@@ -1,6 +1,8 @@
 import React from "react";
 import "./Nav.css";
 import { useHistory } from "react-router-dom";
+import searchImage from "./ImagesNav/searchbar.png";
+import Menu from "./ImagesNav/menuhamburg.png";
 function Nav() {
   // logo is click
   let history = useHistory();
@@ -16,6 +18,8 @@ function Nav() {
 
   const searchBarClick = () => {
     console.log("user clicked on searchbar");
+    // for the search bar
+    // when in phone vw clicks causing does a blur effect and show popular search terms with aniamation
   };
 
   const hamburgMenuClick = () => {
@@ -24,7 +28,6 @@ function Nav() {
 
   return (
     // make onclick for logo
-    // make onclick for kart directs to kart
     // make onclick for search bar open search bar
     // menuitem
     <div id="nav">
@@ -44,13 +47,13 @@ function Nav() {
         />
         <img
           id="search--bar"
-          src="/Users/shahidhussain/Documents/Eccomerce-IndexedDB/public/assest/images/nav-utils/menuhamburg.png"
+          src={searchImage}
           alt="searchBar"
           onClick={searchBarClick}
         />
         <img
           id="hamburg-menu"
-          src="/Users/shahidhussain/Documents/Eccomerce-IndexedDB/public/assest/images/nav-utils/menuhamburg.png/"
+          src={Menu}
           alt="menu"
           onClick={hamburgMenuClick}
         />

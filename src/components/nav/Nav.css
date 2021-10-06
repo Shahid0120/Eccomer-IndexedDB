@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#nav {
+  min-width: 100vw;
+  min-height: 10vh;
+  background-color: aqua;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 10px;
+}
+
+#nav #logo {
+  padding-left: 10px;
+}
+
+#nav #logo #logo--image {
+  max-width: 50px;
+  max-height: 50px;
+  padding-bottom: 2px;
+}
+
+#nav #nav-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#nav #nav-items #search--bar {
+  max-width: 40px;
+  max-height: 40px;
+  padding: 0px 10px 10px;
+}
+
+#nav #nav-items #hamburg-menu {
+  max-width: 40px;
+  max-height: 40px;
+  padding: 0px 10px 10px;
+}
+
+#nav #nav-items #cart {
+  max-width: 40px;
+  max-height: 40px;
+  padding: 0px 10px 10px;
+}
+/*# sourceMappingURL=Nav.css.map */

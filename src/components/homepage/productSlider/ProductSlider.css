@@ -1,0 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#productslider--container {
+  min-width: 60vw;
+  min-height: 60vh;
+  background-color: chartreuse;
+}
+/*# sourceMappingURL=ProductSlider.css.map */

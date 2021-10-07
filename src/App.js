@@ -1,8 +1,15 @@
 import * as React from "react";
+import ReactDOM from "react-dom";
 import Nav from "./components/nav/Nav";
 import HomeSlider from "./components/homepage/HomeSlider";
 import Footer from "./components/footer/Footer";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import Cart from "./components/cart/Cart";
 import Electronics from "./components/electronics/Electronics";
 import Woman from "./components/woman/Woman";
@@ -16,6 +23,7 @@ import Careers from "./components/carrers/Carrers";
 import TermOfUse from "./components/termOfUse/TermOfUse";
 import PrivacyPolicy from "./components/privacyPolicy/PrivacyPolicy";
 function App() {
+  // let location = useLocation();
   return (
     <Router>
       <Switch>
@@ -41,5 +49,12 @@ function App() {
     </Router>
   );
 }
+
+// ReactDOM.render(
+//   <Router>
+//     <App />
+//   </Router>,
+//   document.getElementById("app")
+// );
 
 export default App;

@@ -5,30 +5,26 @@ import { useEffect, useState } from "react";
 
 function AssortedProducts() {
   const [assortedProduct, setAssortedProduct] = useState([]);
+  const [data, setData] = useState([]);
+  const [fiveProduct, setFiveProduct] = useState([]);
+  const [slideIndex, setSlideIndex] = useState(1);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((res) => {
       // this is a object of arrays of 20
       let reqData = res.data;
-      let randomNumber = 0;
-      let image = " ";
-      let title = " ";
-      let price = " ";
-      let mapFourItems = [];
-      let x = 0;
-      while (x < 4) {
-        // find length of reqData
-        // randomnumber length between reqData.length and 1
-        randomNumber = Math.floor(Math.random() * (20 - 1 + 1)) + 1;
-        // -1 for index based
-        image = reqData[randomNumber - 1].image;
-        price = reqData[randomNumber - 1].price;
-        title = reqData[randomNumber - 1].title;
-        mapFourItems.push([title, price, image]);
-        x++;
-      }
-      // console.log(mapFourItems);
-      setAssortedProduct(mapFourItems);
+      setData(reqData);
+      // gets 5 random items from data set
+      // random number between 1 and 20 and takes only 5 products
+      // not random rn
+      const counterFiveProducts = 0;
+      data.map((item) => {
+        if (counterFiveProducts < 5) {
+          setFiveProduct(item);
+          counterFiveProducts++;
+        }
+      });
+      console.log(fiveProduct);
     });
     // show one product
   }, []);
@@ -54,29 +50,45 @@ function AssortedProducts() {
   //   );
   // });
 
-  const rightArrowClick = () => {
-    console.log(assortedProduct["0"]["0"]);
-    let currentNumberArray = 0;
+  const showFirstItem = data.map((product, index) => {
     return (
-      <div>
-        <h1>{assortedProduct["currentNumberArray"]["0"]}</h1>
-        <img src={assortedProduct["currentNumberArray"]["2"]} />
-        <h2>{assortedProduct["currentNumberArray"]["1"]}</h2>
+      <div className={slideIndex === index + 1 ? "slide active-anim" : "slide"}>
+        <h1>{product.title}</h1>
+        <img id="assorted--image" src={product.image} />
+        <h2>{product.price}</h2>
       </div>
     );
+  });
+
+  const nextProduct = () => {
+    console.log("next product");
+    if (slideIndex == 5) {
+      setSlideIndex(1);
+    } else {
+      setSlideIndex(slideIndex + 1);
+    }
   };
+
+  const previousProduct = () => {
+    console.log("previous product");
+    if (slideIndex == 0) {
+      setSlideIndex(5);
+    } else {
+      setSlideIndex(slideIndex + 1);
+    }
+  };
+
+  // const buttonSlider = fiveProduct.map((product) => {
+  //   console.log(product);
+  // });
 
   return (
     <div id="assorted-images--container">
-      <div className="container">
-        <h1>hi</h1>
-        {/* {console.log(assortedProduct[0]["0"])} */}
-        {rightArrowClick}
-        {/* <h1>{assortedProduct[0]["0"]}</h1>
-        <img src={assortedProduct[0]["2"]} />
-        <h2>{assortedProduct[0]["1"]}</h2> */}
-        <button onClick={rightArrowClick}>RIGHT</button>
-      </div>
+      <h1>hi</h1>
+      <button onClick={nextProduct}>NEXT</button>
+      <button onClick={previousProduct}>PREVIOUS</button>
+      {/* {console.log(fiveProduct)} */}
+      {showFirstItem}
     </div>
   );
 }

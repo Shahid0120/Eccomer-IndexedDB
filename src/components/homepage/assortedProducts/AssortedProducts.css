@@ -8,4 +8,22 @@
   min-width: 60vw;
   background-color: beige;
 }
+
+#assorted-images--container .slide {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity ease-in-out 0.4s;
+  transition: opacity ease-in-out 0.4s;
+}
+
+#assorted-images--container .active-anim {
+  opacity: 1;
+}
+
+#assorted-images--container #assorted--image {
+  width: 80vw;
+  height: 50vw;
+}
 /*# sourceMappingURL=AssortedProducts.css.map */
